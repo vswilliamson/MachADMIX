@@ -1,0 +1,7 @@
+#PBS -S /bin/bash
+#PBS -lnodes=1:ppn=2
+#PBS -q serial
+# commands to submit phased haplotypes for imputation
+cd "working directory"
+"machadmix" --geno --runMode ImputeOnly --crossoverMap "phasedfile" --errorMap "phased error rate" -d "snp.dat" -p "group.ped" -h "reference.haplotypes" -s "reference.legend" --ImputeReference --out "outfile"
+
